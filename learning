@@ -1,0 +1,26 @@
+TechStack
+1. SQL - PostGRES
+2. Python
+3. ORM - SQL Alchemy
+4. FastAPI instead of Django or Flask
+
+We will build Social Media type FastAPI
+
+start with uvicorn app.main:app --reload
+    reload will restart server for us -> Not needed in production since we won't change
+
+ionfo about HTTP methods -> https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+Pydantic doesn't have anything to do with FastAPI. It is used to define schema
+
+CRUD -> Create Read Update Delete operations
+
+Create -> POST -> create new entity -> @app.post
+Read -> GET -> app.get(/posts/{id}) or @app.get(/posts)
+Update -> PUT/PATCH -> a matter is user preference on what to use, put means we need to pass all info, patch means some info to be sent -> app.put(/posts/{id})
+Delete -> DELETE -> app.delete(/posts)
+
+BestPractices:
+1. name all urls in plural (eg. with /posts or /users) for standard API convention
+2. PATH paramenetrs are always string, so we need to convert it to data type we need
+3. Order of path resolution matters for FAST API. For ex, /posts/{id} and /posts/latest resolve to same function based on order of occurence. Need to fix this
